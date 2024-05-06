@@ -3,7 +3,7 @@
 Makes it easy to map an unordered set of arbitrary values to a value!
 
 ```
-let cm = new CompoundMap();
+let cm = new CompoundMap({ width: 3 });
 let key1 = {};
 let key2 = [];
 let key3 = /abc/i;

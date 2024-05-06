@@ -2,7 +2,7 @@
 
 type CompoundKey = any[];
 
-export class CompoundMap<K extends CompoundKey, V> {
+export default class CompoundMap<K extends CompoundKey, V> {
   
   static cnt = 0;
   static map = new WeakMap();
