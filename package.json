@@ -1,0 +1,19 @@
+{
+  "name": "@gershy/compound-map",
+  "version": "1.0.3",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gershy/compound-map"
+  },
+  "main": "main.ts",
+  "scripts": {
+    "test": "npx tsc; node ./cmp/test.ts"
+  },
+  "author": "Gershom Maes",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "typescript": "^5.4.3"
+  }
+}
