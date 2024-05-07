@@ -1,4 +1,4 @@
-import { CompoundMap } from "./main";
+import CompoundMap from "./main";
 
 let obj1 = { desc: 'obj' };
 let obj2 = { desc: 'obj' };
