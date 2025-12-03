@@ -6,10 +6,10 @@ export type CompoundMapArgs<K extends MinArray<any>, V> = {}
   & ({ width: unknown } | { entries: unknown });
 export default class CompoundMap<K extends MinArray<any>, V> {
   
-  static cnt = 0;
-  static map = new WeakMap<any, { refs: number, str: string }>();
-  static isPrimitive = (v: any) => v == null || 'boo,str,num,big'.includes((typeof v).slice(0, 3));
-  static uniqueStr = val => {
+  private static cnt = 0;
+  private static map = new WeakMap<any, { refs: number, str: string }>();
+  private static isPrimitive = (v: any) => v == null || 'boo,str,num,big'.includes((typeof v).slice(0, 3));
+  private static uniqueStr = val => {
     
     if (this.isPrimitive(val)) return `${(typeof val).slice(0, 3)}:${val}`;
     
@@ -18,15 +18,15 @@ export default class CompoundMap<K extends MinArray<any>, V> {
     return entry.str;
     
   };
-  static getKey = (cmpKey: any[]) => cmpKey.map(k => this.uniqueStr(k)).sort();
-  static refInc = (cmpKey: any[]) => {
+  private static getKey = (cmpKey: any[]) => cmpKey.map(k => this.uniqueStr(k)).sort();
+  private static refInc = (cmpKey: any[]) => {
     for (const k of cmpKey) {
       if (this.isPrimitive(k)) continue;
       const ent = this.map.get(k)!;
       ent.refs++;
     }
   };
-  static refDec = (cmpKey: any[]) => {
+  private static refDec = (cmpKey: any[]) => {
     for (const k of cmpKey) {
       if (this.isPrimitive(k)) continue;
       const ent = this.map.get(k)!;

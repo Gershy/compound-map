@@ -1,6 +1,6 @@
 # CompoundMap
 
-Makes it easy to map an unordered set of arbitrary values to a value!
+Easily map unordered sets of arbitrary values to corresponding values!
 
 ## Install
 
@@ -10,10 +10,12 @@ Makes it easy to map an unordered set of arbitrary values to a value!
 
 ## Example Usage
 ```
-let cm = new CompoundMap({ width: 3 });
-let key1 = {};
-let key2 = [];
-let key3 = /abc/i;
+import CompoundMap from '@gershy/compound-map';
+
+const cm = new CompoundMap({ width: 3 });
+const key1 = {};
+const key2 = [];
+const key3 = /abc/i;
 
 cm.set([ key1, key2, key3 ], 'lol');
 
